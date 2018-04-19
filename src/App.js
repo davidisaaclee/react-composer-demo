@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import Composer, { Doc, Editor } from '@davidisaaclee/react-composer';
-import './App.css';
+
+const Container = styled.div`
+background-color: #efefef;
+`;
+
+const StyledComposer = styled(Composer)`
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 10px;
+	height: 100vh;
+	background-color: #fff;
+
+	white-space: pre-wrap;
+`;
 
 class App extends Component {
 	state = {
@@ -9,9 +23,9 @@ class App extends Component {
 	}
 
   render() {
-    return (
-			<div className="App">
-				<Composer
+		return (
+			<Container>
+				<StyledComposer
 					document={this.state.doc}
 					selection={this.state.editor.selection}
 					onEdit={edit => {
@@ -34,8 +48,8 @@ class App extends Component {
 					}}
 				/>
 
-		</div>
-    );
+		</Container>
+		);
   }
 }
 
