@@ -23,13 +23,13 @@ const StyledComposer = styled(Composer)`
 `;
 
 const Toolbar = ({
-	isBold, isItalic, isLink,
+	isBold, isItalic, isLink, canAddLink,
 	onToggleBold, onToggleItalic, onAddLink, onRemoveLink,
 	...restProps
 }) => (
 	<div {...restProps}>
 		<label>
-			Bold
+			<span>Bold</span>
 			<input
 				type="checkbox"
 				checked={isBold}
@@ -37,7 +37,7 @@ const Toolbar = ({
 			/>
 		</label>
 		<label>
-			Italic
+			<span>Italic</span>
 			<input
 				type="checkbox"
 				checked={isItalic}
@@ -45,8 +45,8 @@ const Toolbar = ({
 			/>
 		</label>
 		<label>
-			Link
-			<button onClick={onAddLink}>
+			<span>Link</span>
+			<button disabled={!canAddLink} onClick={onAddLink}>
 				Add
 			</button>
 			<button disabled={!isLink} onClick={onRemoveLink}>
@@ -130,6 +130,7 @@ class App extends Component {
 							});
 						}
 					}}
+					canAddLink={this.state.editor.selection != null && !DocSelection.isCollapsed(this.state.editor.selection)}
 					onAddLink={() => {
 						this.promptForLinkURL(url => {
 							this.setState({
