@@ -97,7 +97,7 @@ class App extends Component {
 					isItalic={!!stylesForCurrentSelection.italic}
 					isLink={stylesForCurrentSelection.link != null}
 					onToggleBold={() => {
-						if (DocSelection.isCollapsed(this.state.editor.selection)) {
+						if (this.state.editor.selection == null || DocSelection.isCollapsed(this.state.editor.selection)) {
 							this.setState({
 								stylesOverride: {
 									...stylesForCurrentSelection,
@@ -114,7 +114,7 @@ class App extends Component {
 						}
 					}}
 					onToggleItalic={() => {
-						if (DocSelection.isCollapsed(this.state.editor.selection)) {
+						if (this.state.editor.selection == null || DocSelection.isCollapsed(this.state.editor.selection)) {
 							this.setState({
 								stylesOverride: {
 									...stylesForCurrentSelection,
