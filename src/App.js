@@ -9,7 +9,7 @@ const Container = styled.div`
 const StyledComposer = styled(Composer)`
 	max-width: 500px;
 	margin: 0 auto;
-	padding: 10px;
+	padding: 60px;
 	height: 100vh;
 	background-color: #fff;
 
@@ -57,9 +57,31 @@ const Toolbar = ({
 );
 
 const StyledToolbar = styled(Toolbar)`
+	background-color: rgba(255, 255, 255, 0.5);
+	outline: 1px solid #efefef;
+	font-family: sans-serif;
+
 	position: fixed;
-	left: 10px;
-	bottom: 10px;
+	left: 20px;
+	bottom: 20px;
+
+	display: flex;
+	flex-flow: column nowrap;
+
+	label {
+		margin: 10px;
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+
+		span {
+			margin-right: 2em;
+		}
+
+		button {
+			margin: 0 4px;
+		}
+	}
 `;
 
 class App extends Component {
