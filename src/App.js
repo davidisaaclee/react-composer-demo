@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Composer, { Doc, Editor, Edit, DocSelection, Content } from '@davidisaaclee/react-composer';
+import Composer, { Doc, Editor, Edit, DocSelection } from '@davidisaaclee/react-composer';
 
 const Container = styled.div`
 	background-color: #efefef;
