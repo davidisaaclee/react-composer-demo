@@ -15,6 +15,8 @@ const StyledComposer = styled(Composer)`
 
 	white-space: pre-wrap;
 
+	font-family: sans-serif;
+
 	:focus {
 		outline: none;
 	}
