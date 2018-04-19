@@ -20,6 +20,16 @@ const StyledComposer = styled(Composer)`
 	:focus {
 		outline: none;
 	}
+
+	/* HACK: When the document is empty, the user is directly editing
+	 * the container <div>. Once the user starts typing, a <p> is added,
+	 * pushing the cursor down due to its default vertical margin.
+	 * Removing the top margin of the first paragraph will keep the cursor
+	 * from jumping.
+	 */
+	> p:first-child {
+		margin-top: 0;
+	}
 `;
 
 const Toolbar = ({
