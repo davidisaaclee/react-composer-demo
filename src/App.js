@@ -14,6 +14,10 @@ const StyledComposer = styled(Composer)`
 	background-color: #fff;
 
 	white-space: pre-wrap;
+
+	:focus {
+		outline: none;
+	}
 `;
 
 const Toolbar = ({
